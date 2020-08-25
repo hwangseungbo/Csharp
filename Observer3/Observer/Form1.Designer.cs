@@ -145,6 +145,7 @@
             // listView1
             // 
             this.listView1.Activation = System.Windows.Forms.ItemActivation.OneClick;
+            this.listView1.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.listView1.CheckBoxes = true;
             this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
@@ -295,7 +296,7 @@
             this.button8.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button8.Image = ((System.Drawing.Image)(resources.GetObject("button8.Image")));
             this.button8.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button8.Location = new System.Drawing.Point(0, 336);
+            this.button8.Location = new System.Drawing.Point(3, 399);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(160, 81);
             this.button8.TabIndex = 3;
@@ -311,7 +312,7 @@
             this.button5.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
             this.button5.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button5.Location = new System.Drawing.Point(0, 249);
+            this.button5.Location = new System.Drawing.Point(0, 290);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(160, 81);
             this.button5.TabIndex = 2;
@@ -327,7 +328,7 @@
             this.button7.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button7.Image = ((System.Drawing.Image)(resources.GetObject("button7.Image")));
             this.button7.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button7.Location = new System.Drawing.Point(0, 162);
+            this.button7.Location = new System.Drawing.Point(3, 180);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(160, 81);
             this.button7.TabIndex = 1;
@@ -343,7 +344,7 @@
             this.button6.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button6.Image = ((System.Drawing.Image)(resources.GetObject("button6.Image")));
             this.button6.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button6.Location = new System.Drawing.Point(0, 75);
+            this.button6.Location = new System.Drawing.Point(3, 72);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(160, 81);
             this.button6.TabIndex = 0;

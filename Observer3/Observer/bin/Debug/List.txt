@@ -1,2 +1,6 @@
+C:\Windows\System32\dxdiag.exe
+30
 C:\Windows\System32\cmd.exe
+20
+C:\Windows\System32\mspaint.exe
 10

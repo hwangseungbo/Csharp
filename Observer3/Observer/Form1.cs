@@ -18,6 +18,7 @@ using System.Security.Principal;
 using System.Xml;
 using System.Xml.Schema;
 using System.Runtime.InteropServices;
+using Utilities.BunifuUserControl.Extensions;
 
 namespace Observer
 {
@@ -76,6 +77,7 @@ namespace Observer
         public Form1()
         {
             InitializeComponent();
+
 
             MouseDown += (o, e) => { if (e.Button == MouseButtons.Left) { On = true; Pos = e.Location; } };
             MouseMove += (o, e) => { if (On) Location = new Point(Location.X + (e.X - Pos.X), Location.Y + (e.Y - Pos.Y)); };
@@ -144,11 +146,12 @@ namespace Observer
             this.bunifuElipse1.ApplyElipse(panel1, 8);
             this.bunifuElipse1.ApplyElipse(panel2, 8);
 
-            //System.Windows.Forms.Application.StartupPath  ==  C:\hwangseungbo\Csharp\Observer3\Observer\bin\Debug
             Proc = Process.GetProcesses();
+            
             
             //List.txt파일이 없다면 현재 디렉토리에 생성해줌
             FileInfo fileInfo = new FileInfo(String.Format(@"{0}\List.txt", System.Windows.Forms.Application.StartupPath));
+            //System.Windows.Forms.Application.StartupPath  ==  C:\hwangseungbo\Csharp\Observer3\Observer\bin\Debug 즉 실행파일이 잇는 위치
             if (!fileInfo.Exists)   
             {
                 using (StreamWriter sw = new StreamWriter(String.Format(@"{0}\List.txt", System.Windows.Forms.Application.StartupPath)))
@@ -172,11 +175,11 @@ namespace Observer
             int num = (textvalue.Length/2); // 프로그램 구동시 관리리스트에 프로그램이 등록되어있을경우 구동하기위해 등록된 갯수를 구함.
 
             //관리자 권한 확인
-            //bool right = IsRunningAsLocalAdmin();
-            //if (right) //관리자 권한인지 확인하여 맞으면 타이틀에 Administrator를 붙여줌
-            //{
-            //    this.Text += " " + "(Administrator)";
-            //}
+            bool right = IsRunningAsLocalAdmin();
+            if (right) //관리자 권한인지 확인하여 맞으면 타이틀에 Administrator를 붙여줌
+            {
+                this.Text += " " + "(Administrator)";
+            }
 
             if (num > 0) // 관리하는 프로그램이 1개라도 있다면
             {
@@ -202,10 +205,11 @@ namespace Observer
         void getListview()
         {
             bool[] check = new bool[100];
+            bool[] check2 = new bool[100];
             Process[] proc = Process.GetProcesses();
             
 
-            //리스트뷰 각 행이 체크되있는지 내용을 저장함
+            //리스트뷰 각 행의 체크박스가 체크되있는지 내용을 저장함
             for(int i =0; i<= listView1.Items.Count - 1; i++)
             {
                 if (listView1.Items[i].Checked == true)
@@ -218,6 +222,21 @@ namespace Observer
                 }
                 startTime[i] = listView1.Items[i].SubItems[2].Text;
             }
+
+
+            //리스트뷰 각 아이템이 선택되어있는지 내용을 저장함
+            for (int i = 0; i <= listView1.Items.Count- 1; i++)
+            {
+                if (listView1.Items[i].Selected == true)
+                {
+                    check2[i] = true;
+                }
+                else if (listView1.Items[i].Selected == false)
+                {
+                    check2[i] = false;
+                }
+            }
+
             listView1.Items.Clear();
             
 
@@ -276,6 +295,19 @@ namespace Observer
                         listView1.Items[g].Checked = false;
                     }
                 }
+
+                for (int j =0; j <= listView1.Items.Count-1; j++)
+                {
+                    if(check2[j] == true)
+                    {
+                        listView1.Items[j].Selected = true;
+                    }
+                    else if(check2[j] == false)
+                    {
+                        listView1.Items[j].Selected = false;
+                    }
+
+                }
             }
             lblProcNum.Text = "관리중인 프로그램 수 : " + (textvalue.Length / 2).ToString();
 
@@ -285,7 +317,6 @@ namespace Observer
                 {
                     if (listView1.Items[i].SubItems[1].Text == textBox1.Text)
                     {
-                        listView1.Items[i].Focused = true;    //안해도 될듯 포커스드와 셀렉티드의 정확한 차이점 공부 필
                         listView1.Items[i].Selected = true;
                         break;
                     }
@@ -293,24 +324,38 @@ namespace Observer
             }
         }
 
+
+
         //폼의 빈공간 클릭시 이벤트
         private void Form1_MouseClick(object sender, MouseEventArgs e)
         {
             try
             {
                 //리스트뷰가 선택되어있으면 해제한다.
-                if (listView1.SelectedItems[0].Selected==true)
+                if (listView1.SelectedItems.Count == 1)
                 {
                     listView1.SelectedItems[0].Selected = false;
-                    listView1.FocusedItem.Selected = false;
                     button2.Enabled = false;
                     button3.Enabled = false;
                     button4.Enabled = false;
                     textBox1.Text = "";
                     textBox2.Text = "";
                 }
-                
-            }catch { }
+                if (listView1.SelectedItems.Count >1)
+                {
+                    for (int i = listView1.SelectedItems.Count - 1; i >= 0; i--)
+                    {
+                        listView1.SelectedItems[i].Selected = false;
+                    }
+                    button2.Enabled = false;
+                    button3.Enabled = false;
+                    button4.Enabled = false;
+                    textBox1.Text = "";
+                    textBox2.Text = "";
+                }
+            }
+            catch 
+            { }
         }
 
         //관리자 권한으로 실행되는지 확인하기 위한 함수
@@ -746,18 +791,31 @@ namespace Observer
         {
             if (listView1.SelectedItems.Count == 1)
             {
-                button4.Enabled = true;
                 button2.Enabled = true;
+                button3.Enabled = false;
+                button4.Enabled = true;
+                textBox1.Text = listView1.SelectedItems[0].SubItems[1].Text;
+                textBox2.Text = listView1.SelectedItems[0].SubItems[3].Text;
             }
-            button3.Enabled = false;
-            textBox1.Text = listView1.FocusedItem.SubItems[1].Text;
-            textBox2.Text = listView1.FocusedItem.SubItems[3].Text;
+            if(listView1.SelectedItems.Count >1)
+            {
+                button2.Enabled = false;
+                button3.Enabled = false;
+                button4.Enabled = false;
+                textBox1.Text = "여러 항목을 한번에 수정하거나 삭제할 수 없습니다.";
+                textBox2.Text = "";
+                for(int i=0;i<=listView1.SelectedItems.Count-1;i++)
+                {
+                    listView1.SelectedItems[i].Checked = true;
+                }
+            }
         }
 
         //"수정"버튼 클릭 이벤트
         private void button2_Click(object sender, EventArgs e)
         {
             timer1.Stop();
+
             //if(textBox1.Text == "" || textBox2.Text == "") 이 조건도 사용은 가능하나 공백을 잡지 못하므로 아래의 조건을 사용하였다.
             if (String.IsNullOrWhiteSpace(textBox1.Text) == true || String.IsNullOrWhiteSpace(textBox2.Text) == true)  
             {
@@ -765,7 +823,7 @@ namespace Observer
             }
             else if(String.IsNullOrWhiteSpace(textBox2.Text) == false) //textBox1은 사용자가 글자를 입력할 수 없으므로 조건을 확인할 필요가 없다.
             {
-                listView1.FocusedItem.SubItems[3].Text = textBox2.Text.ToString();
+                listView1.SelectedItems[0].SubItems[3].Text = textBox2.Text.ToString();
                 var lines = new List<string>();
                 lines.AddRange(File.ReadAllLines(String.Format(@"{0}\List.txt", System.Windows.Forms.Application.StartupPath)));
 
@@ -915,7 +973,7 @@ namespace Observer
 
                     for (int i = 0; i <= lines.Count - 2; i = i + 2)
                     {
-                        if (listView1.FocusedItem.SubItems[1].Text == lines[i])
+                        if (listView1.SelectedItems[0].SubItems[1].Text == lines[i])
                         {
                             LogWrite(lines[i] + "(을)를 관리 테이블에서 삭제합니다.");
                             lines.RemoveAt(i);
@@ -932,9 +990,12 @@ namespace Observer
                             Thread.Sleep(100);
                         }
                     }
-                    listView1.FocusedItem.Remove();
+                    listView1.SelectedItems[0].Remove();
+                    textBox1.Text = "";
+                    textBox2.Text = "";
+                    button2.Enabled = false;
+                    button3.Enabled = false;
                     button4.Enabled = false;
-                    button3.Enabled = true;
                     StopAndDoWork();
                 }
             }

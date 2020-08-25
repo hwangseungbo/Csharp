@@ -141,3 +141,4 @@ C:\Users\sarada\Desktop\CSharp\Observer3\Observer\obj\Debug\PM.csproj.CopyComple
 C:\Users\sarada\Desktop\CSharp\Observer3\Observer\obj\Debug\Observer.exe
 C:\Users\sarada\Desktop\CSharp\Observer3\Observer\obj\Debug\Observer.pdb
 C:\Users\sarada\Desktop\CSharp\Observer3\Observer\bin\Debug\Observer.pdb
+C:\Users\sarada\Desktop\CSharp\Observer3\Observer\obj\Debug\PM.csprojAssemblyReference.cache
