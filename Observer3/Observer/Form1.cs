@@ -172,11 +172,11 @@ namespace Observer
             int num = (textvalue.Length/2); // 프로그램 구동시 관리리스트에 프로그램이 등록되어있을경우 구동하기위해 등록된 갯수를 구함.
 
             //관리자 권한 확인
-            bool right = IsRunningAsLocalAdmin();
-            if (right) //관리자 권한인지 확인하여 맞으면 타이틀에 Administrator를 붙여줌
-            {
-                this.Text += " " + "(Administrator)";
-            }
+            //bool right = IsRunningAsLocalAdmin();
+            //if (right) //관리자 권한인지 확인하여 맞으면 타이틀에 Administrator를 붙여줌
+            //{
+            //    this.Text += " " + "(Administrator)";
+            //}
 
             if (num > 0) // 관리하는 프로그램이 1개라도 있다면
             {
@@ -621,23 +621,33 @@ namespace Observer
 
                 textBox1.Text = path;
                 textBox2.Text = "5";
-                for (int i = 0; i <= listView1.Items.Count - 1; i++)
+                if (listView1.Items.Count != 0)
                 {
-                    if(path == listView1.Items[i].SubItems[1].Text)
+                    for (int i = 0; i <= listView1.Items.Count - 1; i++)
                     {
-                        listView1.SelectedItems.Clear();
-                        textBox1.Text = "이미 등록된 프로그램 입니다.";
-                        button2.Enabled = false;
-                        button3.Enabled = false;
-                        button4.Enabled = false;
+                        if (path == listView1.Items[i].SubItems[1].Text)
+                        {
+                            listView1.SelectedItems.Clear();
+                            textBox1.Text = "이미 등록된 프로그램 입니다.";
+                            button2.Enabled = false;
+                            button3.Enabled = false;
+                            button4.Enabled = false;
+                        }
+                        else
+                        {
+                            listView1.SelectedItems.Clear();
+                            button2.Enabled = false;
+                            button3.Enabled = true;
+                            button4.Enabled = false;
+                        }
                     }
-                    else
-                    {
-                        listView1.SelectedItems.Clear();
-                        button2.Enabled = false;
-                        button3.Enabled = true;
-                        button4.Enabled = false;
-                    }
+                }
+                else if(listView1.Items.Count ==0)
+                {
+                    listView1.SelectedItems.Clear();
+                    button2.Enabled = false;
+                    button3.Enabled = true;
+                    button4.Enabled = false;
                 }
             }
         }
