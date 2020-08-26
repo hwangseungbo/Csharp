@@ -17,24 +17,24 @@ namespace Observer
         static void Main()
         {
             /* 관리자 권한 상승을 위한 코드 */
-            if (IsAdministrator() == false)
-            {
-                try
-                {
-                    ProcessStartInfo procinfo = new ProcessStartInfo();
-                    procinfo.UseShellExecute = true;
-                    procinfo.FileName = Application.ExecutablePath;
-                    procinfo.WorkingDirectory = Environment.CurrentDirectory;
-                    procinfo.Verb = "runas";
-                    Process.Start(procinfo);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message.ToString());
-                }
+            //if (IsAdministrator() == false)
+            //{
+            //    try
+            //    {
+            //        ProcessStartInfo procinfo = new ProcessStartInfo();
+            //        procinfo.UseShellExecute = true;
+            //        procinfo.FileName = Application.ExecutablePath;
+            //        procinfo.WorkingDirectory = Environment.CurrentDirectory;
+            //        procinfo.Verb = "runas";
+            //        Process.Start(procinfo);
+            //    }
+            //    catch (Exception ex)
+            //    {
+            //        MessageBox.Show(ex.Message.ToString());
+            //    }
 
-                return;
-            }
+            //    return;
+            //}
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);

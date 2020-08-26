@@ -18,7 +18,6 @@ using System.Security.Principal;
 using System.Xml;
 using System.Xml.Schema;
 using System.Runtime.InteropServices;
-using Utilities.BunifuUserControl.Extensions;
 
 namespace Observer
 {
@@ -33,46 +32,9 @@ namespace Observer
         string[] procName = new string[300];        //전체 프로세스 명을 담을 스트링 배열
         private object lockObject = new object();   //lock문에 사용될 객체.
         string[] startTime = new string[100];   // 시작시간을 저장하고있는 스트링배열
-
+        
         bool On;
         Point Pos;
-
-        /*
-        public async Task PrintDoc(string fileName)
-        {
-            eventHandled = new TaskCompletionSource<bool>();
-            
-            using (myProcess[index] = new Process())
-            {
-                try
-                {
-                    myProcess[index].StartInfo.FileName = fileName;
-                    myProcess[index].StartInfo.Verb = "Print";
-                    myProcess[index].StartInfo.CreateNoWindow = true;
-                    myProcess[index].EnableRaisingEvents = true;
-                    object name = fileName;
-                    myProcess[index].Exited += new EventHandler(myProcess_Exited);
-                    myProcess[index].Start();
-                }
-                catch(Exception ex)
-                {
-                    Console.WriteLine($"An error occurred trying to print \"{fileName}\":\n{ex.Message}");
-                    return;
-                }
-                index++;
-                // Wait for Exited event, but not more than 30 seconds.
-                await Task.WhenAny(eventHandled.Task, Task.Delay(30000));
-            }
-        }
-        
-
-        private void myProcess_Exited(object sender, EventArgs e)
-        {
-            MessageBox.Show(e.ToString());
-            LogWrite("가 종료되었습니다.");
-            eventHandled.TrySetResult(true);
-        }
-        */
 
         public Form1()
         {
@@ -143,12 +105,8 @@ namespace Observer
         
         private void Form1_Load(object sender, EventArgs e)
         {
-            this.bunifuElipse1.ApplyElipse(panel1, 8);
-            this.bunifuElipse1.ApplyElipse(panel2, 8);
-
             Proc = Process.GetProcesses();
-            
-            
+
             //List.txt파일이 없다면 현재 디렉토리에 생성해줌
             FileInfo fileInfo = new FileInfo(String.Format(@"{0}\List.txt", System.Windows.Forms.Application.StartupPath));
             //System.Windows.Forms.Application.StartupPath  ==  C:\hwangseungbo\Csharp\Observer3\Observer\bin\Debug 즉 실행파일이 잇는 위치
@@ -159,14 +117,6 @@ namespace Observer
                     sw.Close();
                 }
             }
-
-            /*  
-            Thread thread = new Thread(new ThreadStart(Run));
-            //프로그램 종료시 쓰레드는 계속동작하여 프로세스가 남는경우가 있었는데 
-            //아래 문단을 통해 부모프로세스 종료시 스레드를 종료시킬 수 있으므로 문제를 해결할 수 있다.
-            thread.IsBackground = true;
-            thread.Start();
-            */
 
             LogWrite("PM프로그램이 실행되었습니다.");
 
@@ -387,12 +337,16 @@ namespace Observer
             while (true)
             {
                 int idx=0;
-                for (int i = 0; i <= listView1.Items.Count - 1; i++)
+
+                lock (lockObject)
                 {
-                    if(listView1.Items[i].SubItems[1].Text == path)
+                    for (int i = 0; i <= listView1.Items.Count - 1; i++)
                     {
-                        idx = i;
-                        break;
+                        if (listView1.Items[i].SubItems[1].Text == path)
+                        {
+                            idx = i;
+                            break;
+                        }
                     }
                 }
 
@@ -1008,15 +962,56 @@ namespace Observer
         //시작프로그램 등록버튼
         private void button6_Click(object sender, EventArgs e)
         {
-            registrySet();
+            RegistrySet();
         }
+        //시작 프로그램 등록함수
+        void RegistrySet()
+        {
+            try
+            {
+                // 시작프로그램 등록하는 레지스트리
+                string runKey = @"SOFTWARE\Microsoft\Windows\CurrentVersion\Run";
+                RegistryKey strUpKey = Registry.LocalMachine.OpenSubKey(runKey);
+                if (strUpKey.GetValue("StartupNanumtip") == null)
+                {
+                    strUpKey.Close();
+                    strUpKey = Registry.LocalMachine.OpenSubKey(runKey, true);
+                    // 시작프로그램 등록명과 exe경로를 레지스트리에 등록
+                    strUpKey.SetValue("StartupNanumtip", Application.ExecutablePath);
+                    MessageBox.Show("시작 프로그램으로 등록합니다.");
+                }
+                else if(strUpKey.GetValue("StartupNanumtip") != null)
+                {
+                    MessageBox.Show("이미 등록되어 있습니다..");
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Add Startup Fail");
+            }
+        }        
 
         //시작프로그램 등록 삭제 버튼
         private void button7_Click(object sender, EventArgs e)
         {
-            registryDel();
+            RegistryDel();
         }
-
+        //시작프로그램 등록 삭제 함수
+        void RegistryDel()
+        {
+            try
+            {
+                string runKey = @"SOFTWARE\Microsoft\Windows\CurrentVersion\Run";
+                RegistryKey strUpKey = Registry.LocalMachine.OpenSubKey(runKey, true);
+                // 레지스트리값 제거
+                strUpKey.DeleteValue("StartupNanumtip");
+                MessageBox.Show("시작프로그램에서 제거되었습니다.");
+            }
+            catch
+            {
+                MessageBox.Show("시작프로그램 리스트에 존재하지않습니다.");
+            }
+        }
 
         private Point mCurrentPosition = new Point(0, 0);
         private void panel1_MouseDown(object sender, MouseEventArgs e)
