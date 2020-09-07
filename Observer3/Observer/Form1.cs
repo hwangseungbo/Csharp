@@ -28,7 +28,7 @@ namespace Observer
         int Tindex = 0;                     // Tpro객체 인덱스
         Process[] Proc;                     // 전체 프로세스 정보를 담을 객체
         private Process[] myProcess = new Process[100];
-        private TaskCompletionSource<bool> eventHandled;
+        //private TaskCompletionSource<bool> eventHandled;
         string[] procName = new string[300];        //전체 프로세스 명을 담을 스트링 배열
         private object lockObject = new object();   //lock문에 사용될 객체.
         string[] startTime = new string[100];   // 시작시간을 저장하고있는 스트링배열
@@ -40,14 +40,13 @@ namespace Observer
         {
             InitializeComponent();
 
-
             MouseDown += (o, e) => { if (e.Button == MouseButtons.Left) { On = true; Pos = e.Location; } };
             MouseMove += (o, e) => { if (On) Location = new Point(Location.X + (e.X - Pos.X), Location.Y + (e.Y - Pos.Y)); };
             MouseUp += (o, e) => { if (e.Button == MouseButtons.Left) { On = false; Pos = e.Location; } };
 
-            button2.Enabled = false;
-            button3.Enabled = false;
-            button4.Enabled = false;
+            btnRevise.Enabled = false;
+            btnAdd.Enabled = false;
+            btnDel.Enabled = false;
             //대기시간없이 리스트 뷰 뛰우기위해 여기에 추가했다.--------------------------------------------------------------
             Process[] proc = Process.GetProcesses();
             listView1.Items.Clear();
@@ -125,7 +124,7 @@ namespace Observer
             int num = (textvalue.Length/2); // 프로그램 구동시 관리리스트에 프로그램이 등록되어있을경우 구동하기위해 등록된 갯수를 구함.
 
             //관리자 권한 확인
-            bool right = IsRunningAsLocalAdmin();
+                bool right = IsRunningAsLocalAdmin();
             if (right) //관리자 권한인지 확인하여 맞으면 타이틀에 Administrator를 붙여줌
             {
                 this.Text += " " + "(Administrator)";
@@ -261,11 +260,11 @@ namespace Observer
             }
             lblProcNum.Text = "관리중인 프로그램 수 : " + (textvalue.Length / 2).ToString();
 
-            if (textBox1.Text != "")
+            if (tboxPath.Text != "")
             {
                 for (int i = 0; i <= listView1.Items.Count - 1; i++) //리스트 뷰의 항목선택이 유지되도록 한다.
                 {
-                    if (listView1.Items[i].SubItems[1].Text == textBox1.Text)
+                    if (listView1.Items[i].SubItems[1].Text == tboxPath.Text)
                     {
                         listView1.Items[i].Selected = true;
                         break;
@@ -285,11 +284,11 @@ namespace Observer
                 if (listView1.SelectedItems.Count == 1)
                 {
                     listView1.SelectedItems[0].Selected = false;
-                    button2.Enabled = false;
-                    button3.Enabled = false;
-                    button4.Enabled = false;
-                    textBox1.Text = "";
-                    textBox2.Text = "";
+                    btnRevise.Enabled = false;
+                    btnAdd.Enabled = false;
+                    btnDel.Enabled = false;
+                    tboxPath.Text = "";
+                    tboxPeriod.Text = "";
                 }
                 if (listView1.SelectedItems.Count >1)
                 {
@@ -297,11 +296,11 @@ namespace Observer
                     {
                         listView1.SelectedItems[i].Selected = false;
                     }
-                    button2.Enabled = false;
-                    button3.Enabled = false;
-                    button4.Enabled = false;
-                    textBox1.Text = "";
-                    textBox2.Text = "";
+                    btnRevise.Enabled = false;
+                    btnAdd.Enabled = false;
+                    btnDel.Enabled = false;
+                    tboxPath.Text = "";
+                    tboxPeriod.Text = "";
                 }
             }
             catch 
@@ -618,8 +617,8 @@ namespace Observer
                 string item = Path.GetFileNameWithoutExtension(openProcessFile.FileName); //프로세스 명(ex: mspaint)을 반환받아 item 변수에 저장한다.
                 string path = openProcessFile.FileName;        //바로가기 lnk 파일을 대상으로해도 실제 찐경로가 반환된다.
 
-                textBox1.Text = path;
-                textBox2.Text = "5";
+                tboxPath.Text = path;
+                tboxPeriod.Text = "5";
                 if (listView1.Items.Count != 0)
                 {
                     for (int i = 0; i <= listView1.Items.Count - 1; i++)
@@ -627,26 +626,26 @@ namespace Observer
                         if (path == listView1.Items[i].SubItems[1].Text)
                         {
                             listView1.SelectedItems.Clear();
-                            textBox1.Text = "이미 등록된 프로그램 입니다.";
-                            button2.Enabled = false;
-                            button3.Enabled = false;
-                            button4.Enabled = false;
+                            tboxPath.Text = "이미 등록된 프로그램 입니다.";
+                            btnRevise.Enabled = false;
+                            btnAdd.Enabled = false;
+                            btnDel.Enabled = false;
                         }
                         else
                         {
                             listView1.SelectedItems.Clear();
-                            button2.Enabled = false;
-                            button3.Enabled = true;
-                            button4.Enabled = false;
+                            btnRevise.Enabled = false;
+                            btnAdd.Enabled = true;
+                            btnDel.Enabled = false;
                         }
                     }
                 }
                 else if(listView1.Items.Count ==0)
                 {
                     listView1.SelectedItems.Clear();
-                    button2.Enabled = false;
-                    button3.Enabled = true;
-                    button4.Enabled = false;
+                    btnRevise.Enabled = false;
+                    btnAdd.Enabled = true;
+                    btnDel.Enabled = false;
                 }
             }
         }
@@ -655,21 +654,21 @@ namespace Observer
         private void button3_Click(object sender, EventArgs e)
         {
             timer1.Stop();
-            if (textBox1.Text == "")
+            if (tboxPath.Text == "")
             {
                 MessageBox.Show("찾기 버튼을 통해 실행파일을 선택해주세요.");
             }
-            else if (textBox1.Text != "" && textBox2.Text == "")
+            else if (tboxPath.Text != "" && tboxPeriod.Text == "")
             {
                 MessageBox.Show("주기를 입력해주세요.");
             }
-            else if(!(int.TryParse(textBox2.Text, out int result)))
+            else if(!(int.TryParse(tboxPeriod.Text, out int result)))
             {
                 MessageBox.Show("주기는 숫자만 입력해주세요.");
             }
             else
             {
-                string path = textBox1.Text;
+                string path = tboxPath.Text;
                 ResistProcess(path);
                 StopAndDoWork();
             }
@@ -690,7 +689,7 @@ namespace Observer
                 using (StreamWriter sw = new StreamWriter(String.Format(@"{0}\List.txt", System.Windows.Forms.Application.StartupPath)))
                 {
                     sw.WriteLine(path);
-                    sw.WriteLine(textBox2.Text);
+                    sw.WriteLine(tboxPeriod.Text);
                     sw.Close();
                 }
                 Thread.Sleep(10);
@@ -714,7 +713,7 @@ namespace Observer
                             using (StreamWriter sw = new StreamWriter(String.Format(@"{0}\List.txt", System.Windows.Forms.Application.StartupPath), true))
                             {
                                 sw.WriteLine(path);
-                                sw.WriteLine(textBox2.Text);
+                                sw.WriteLine(tboxPeriod.Text);
                                 sw.Close();
                             }
                             Thread.Sleep(10);
@@ -727,7 +726,7 @@ namespace Observer
                     using (StreamWriter sw = File.AppendText(String.Format(@"{0}\List.txt", System.Windows.Forms.Application.StartupPath)))
                     {
                         sw.WriteLine(path);
-                        sw.WriteLine(textBox2.Text);
+                        sw.WriteLine(tboxPeriod.Text);
                         sw.Close();
                     }
                     Thread.Sleep(10);
@@ -745,19 +744,19 @@ namespace Observer
         {
             if (listView1.SelectedItems.Count == 1)
             {
-                button2.Enabled = true;
-                button3.Enabled = false;
-                button4.Enabled = true;
-                textBox1.Text = listView1.SelectedItems[0].SubItems[1].Text;
-                textBox2.Text = listView1.SelectedItems[0].SubItems[3].Text;
+                btnRevise.Enabled = true;
+                btnAdd.Enabled = false;
+                btnDel.Enabled = true;
+                tboxPath.Text = listView1.SelectedItems[0].SubItems[1].Text;
+                tboxPeriod.Text = listView1.SelectedItems[0].SubItems[3].Text;
             }
             if(listView1.SelectedItems.Count >1)
             {
-                button2.Enabled = false;
-                button3.Enabled = false;
-                button4.Enabled = false;
-                textBox1.Text = "여러 항목을 한번에 수정하거나 삭제할 수 없습니다.";
-                textBox2.Text = "";
+                btnRevise.Enabled = false;
+                btnAdd.Enabled = false;
+                btnDel.Enabled = false;
+                tboxPath.Text = "여러 항목을 한번에 수정하거나 삭제할 수 없습니다.";
+                tboxPeriod.Text = "";
                 for(int i=0;i<=listView1.SelectedItems.Count-1;i++)
                 {
                     listView1.SelectedItems[i].Checked = true;
@@ -771,21 +770,21 @@ namespace Observer
             timer1.Stop();
 
             //if(textBox1.Text == "" || textBox2.Text == "") 이 조건도 사용은 가능하나 공백을 잡지 못하므로 아래의 조건을 사용하였다.
-            if (String.IsNullOrWhiteSpace(textBox1.Text) == true || String.IsNullOrWhiteSpace(textBox2.Text) == true)  
+            if (String.IsNullOrWhiteSpace(tboxPath.Text) == true || String.IsNullOrWhiteSpace(tboxPeriod.Text) == true)  
             {
                 MessageBox.Show("테이블에서 항목을 클릭해 주세요");
             }
-            else if(String.IsNullOrWhiteSpace(textBox2.Text) == false) //textBox1은 사용자가 글자를 입력할 수 없으므로 조건을 확인할 필요가 없다.
+            else if(String.IsNullOrWhiteSpace(tboxPeriod.Text) == false) //textBox1은 사용자가 글자를 입력할 수 없으므로 조건을 확인할 필요가 없다.
             {
-                listView1.SelectedItems[0].SubItems[3].Text = textBox2.Text.ToString();
+                listView1.SelectedItems[0].SubItems[3].Text = tboxPeriod.Text.ToString();
                 var lines = new List<string>();
                 lines.AddRange(File.ReadAllLines(String.Format(@"{0}\List.txt", System.Windows.Forms.Application.StartupPath)));
 
                 for(int i = 0; i< lines.Count; i++)
                 {
-                    if(textBox1.Text == lines[i])
+                    if(tboxPath.Text == lines[i])
                     {
-                        lines[i + 1] = textBox2.Text.ToString();
+                        lines[i + 1] = tboxPeriod.Text.ToString();
 
                         using (StreamWriter outputFile = new StreamWriter(String.Format(@"{0}\List.txt", System.Windows.Forms.Application.StartupPath)))
                         {
@@ -822,8 +821,6 @@ namespace Observer
                 Tpro[Tindex].Start();
                 Tindex++;
             }
-
-
         }
 
 
@@ -945,11 +942,11 @@ namespace Observer
                         }
                     }
                     listView1.SelectedItems[0].Remove();
-                    textBox1.Text = "";
-                    textBox2.Text = "";
-                    button2.Enabled = false;
-                    button3.Enabled = false;
-                    button4.Enabled = false;
+                    tboxPath.Text = "";
+                    tboxPeriod.Text = "";
+                    btnRevise.Enabled = false;
+                    btnAdd.Enabled = false;
+                    btnDel.Enabled = false;
                     StopAndDoWork();
                 }
             }

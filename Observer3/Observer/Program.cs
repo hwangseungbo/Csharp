@@ -44,17 +44,17 @@ namespace Observer
 
 
         //관리자 권한 확인 함수
-        public static bool IsAdministrator()
-        {
-            WindowsIdentity identity = WindowsIdentity.GetCurrent();
+        //public static bool IsAdministrator()
+        //{
+        //    WindowsIdentity identity = WindowsIdentity.GetCurrent();
 
-            if (null != identity)
-            {
-                WindowsPrincipal principal = new WindowsPrincipal(identity);
-                return principal.IsInRole(WindowsBuiltInRole.Administrator);
-            }
-            return false;
-        }
+        //    if (null != identity)
+        //    {
+        //        WindowsPrincipal principal = new WindowsPrincipal(identity);
+        //        return principal.IsInRole(WindowsBuiltInRole.Administrator);
+        //    }
+        //    return false;
+        //}
 
     }
 }

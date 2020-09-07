@@ -31,12 +31,12 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.tboxPath = new System.Windows.Forms.TextBox();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.tboxPeriod = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnRevise = new System.Windows.Forms.Button();
             this.listView1 = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -46,16 +46,16 @@
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lblProcNum = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.btnDel = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.btnExit = new System.Windows.Forms.Button();
+            this.btnOpen = new System.Windows.Forms.Button();
+            this.btnSPD = new System.Windows.Forms.Button();
+            this.btnSPR = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -71,31 +71,31 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "실행파일";
             // 
-            // textBox1
+            // tboxPath
             // 
-            this.textBox1.Enabled = false;
-            this.textBox1.Font = new System.Drawing.Font("굴림", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox1.Location = new System.Drawing.Point(264, 59);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(598, 29);
-            this.textBox1.TabIndex = 3;
+            this.tboxPath.Enabled = false;
+            this.tboxPath.Font = new System.Drawing.Font("굴림", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.tboxPath.Location = new System.Drawing.Point(264, 59);
+            this.tboxPath.Name = "tboxPath";
+            this.tboxPath.Size = new System.Drawing.Size(598, 29);
+            this.tboxPath.TabIndex = 3;
             // 
-            // button1
+            // btnSearch
             // 
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button1.ForeColor = System.Drawing.Color.AliceBlue;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button1.Location = new System.Drawing.Point(870, 37);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(171, 77);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "찾기";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnSearch.FlatAppearance.BorderSize = 0;
+            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearch.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnSearch.ForeColor = System.Drawing.Color.AliceBlue;
+            this.btnSearch.Image = ((System.Drawing.Image)(resources.GetObject("btnSearch.Image")));
+            this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnSearch.Location = new System.Drawing.Point(870, 37);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(171, 77);
+            this.btnSearch.TabIndex = 4;
+            this.btnSearch.Text = "찾기";
+            this.btnSearch.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.button1_Click);
             // 
             // label2
             // 
@@ -107,13 +107,13 @@
             this.label2.TabIndex = 5;
             this.label2.Text = "주기";
             // 
-            // textBox2
+            // tboxPeriod
             // 
-            this.textBox2.Font = new System.Drawing.Font("굴림", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox2.Location = new System.Drawing.Point(264, 142);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(99, 29);
-            this.textBox2.TabIndex = 6;
+            this.tboxPeriod.Font = new System.Drawing.Font("굴림", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.tboxPeriod.Location = new System.Drawing.Point(264, 142);
+            this.tboxPeriod.Name = "tboxPeriod";
+            this.tboxPeriod.Size = new System.Drawing.Size(99, 29);
+            this.tboxPeriod.TabIndex = 6;
             // 
             // label3
             // 
@@ -125,21 +125,21 @@
             this.label3.TabIndex = 7;
             this.label3.Text = "초";
             // 
-            // button2
+            // btnRevise
             // 
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button2.Location = new System.Drawing.Point(634, 132);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(171, 77);
-            this.button2.TabIndex = 8;
-            this.button2.Text = "수정";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnRevise.FlatAppearance.BorderSize = 0;
+            this.btnRevise.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRevise.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnRevise.Image = ((System.Drawing.Image)(resources.GetObject("btnRevise.Image")));
+            this.btnRevise.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnRevise.Location = new System.Drawing.Point(634, 132);
+            this.btnRevise.Name = "btnRevise";
+            this.btnRevise.Size = new System.Drawing.Size(171, 77);
+            this.btnRevise.TabIndex = 8;
+            this.btnRevise.Text = "수정";
+            this.btnRevise.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnRevise.UseVisualStyleBackColor = true;
+            this.btnRevise.Click += new System.EventHandler(this.button2_Click);
             // 
             // listView1
             // 
@@ -210,37 +210,37 @@
             this.timer1.Interval = 7000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // button3
+            // btnAdd
             // 
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button3.Location = new System.Drawing.Point(410, 133);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(171, 76);
-            this.button3.TabIndex = 12;
-            this.button3.Text = "추가";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.btnAdd.FlatAppearance.BorderSize = 0;
+            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdd.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
+            this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnAdd.Location = new System.Drawing.Point(410, 133);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(171, 76);
+            this.btnAdd.TabIndex = 12;
+            this.btnAdd.Text = "추가";
+            this.btnAdd.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.button3_Click);
             // 
-            // button4
+            // btnDel
             // 
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button4.Location = new System.Drawing.Point(857, 132);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(171, 77);
-            this.button4.TabIndex = 13;
-            this.button4.Text = "삭제";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.btnDel.FlatAppearance.BorderSize = 0;
+            this.btnDel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDel.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnDel.Image = ((System.Drawing.Image)(resources.GetObject("btnDel.Image")));
+            this.btnDel.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnDel.Location = new System.Drawing.Point(857, 132);
+            this.btnDel.Name = "btnDel";
+            this.btnDel.Size = new System.Drawing.Size(171, 77);
+            this.btnDel.TabIndex = 13;
+            this.btnDel.Text = "삭제";
+            this.btnDel.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnDel.UseVisualStyleBackColor = true;
+            this.btnDel.Click += new System.EventHandler(this.button4_Click);
             // 
             // panel1
             // 
@@ -278,82 +278,79 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(49)))), ((int)(((byte)(69)))));
-            this.panel2.Controls.Add(this.button8);
-            this.panel2.Controls.Add(this.button5);
-            this.panel2.Controls.Add(this.button7);
-            this.panel2.Controls.Add(this.button6);
+            this.panel2.Controls.Add(this.btnExit);
+            this.panel2.Controls.Add(this.btnOpen);
+            this.panel2.Controls.Add(this.btnSPD);
+            this.panel2.Controls.Add(this.btnSPR);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 31);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(163, 544);
             this.panel2.TabIndex = 15;
             // 
-            // button8
+            // btnExit
             // 
-            this.button8.FlatAppearance.BorderSize = 0;
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button8.Image = ((System.Drawing.Image)(resources.GetObject("button8.Image")));
-            this.button8.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button8.Location = new System.Drawing.Point(3, 399);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(160, 81);
-            this.button8.TabIndex = 3;
-            this.button8.Text = "프로그램 종료";
-            this.button8.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button8.UseVisualStyleBackColor = true;
-            this.button8.Click += new System.EventHandler(this.button8_Click);
+            this.btnExit.FlatAppearance.BorderSize = 0;
+            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExit.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
+            this.btnExit.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnExit.Location = new System.Drawing.Point(3, 399);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(160, 81);
+            this.btnExit.TabIndex = 3;
+            this.btnExit.Text = "프로그램 종료";
+            this.btnExit.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.button8_Click);
             // 
-            // button5
+            // btnOpen
             // 
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
-            this.button5.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button5.Location = new System.Drawing.Point(0, 290);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(160, 81);
-            this.button5.TabIndex = 2;
-            this.button5.Text = "프로그램 위치열기";
-            this.button5.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.btnOpen.FlatAppearance.BorderSize = 0;
+            this.btnOpen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOpen.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnOpen.Image = ((System.Drawing.Image)(resources.GetObject("btnOpen.Image")));
+            this.btnOpen.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnOpen.Location = new System.Drawing.Point(0, 290);
+            this.btnOpen.Name = "btnOpen";
+            this.btnOpen.Size = new System.Drawing.Size(160, 81);
+            this.btnOpen.TabIndex = 2;
+            this.btnOpen.Text = "프로그램 위치열기";
+            this.btnOpen.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnOpen.UseVisualStyleBackColor = true;
+            this.btnOpen.Click += new System.EventHandler(this.button5_Click);
             // 
-            // button7
+            // btnSPD
             // 
-            this.button7.FlatAppearance.BorderSize = 0;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button7.Image = ((System.Drawing.Image)(resources.GetObject("button7.Image")));
-            this.button7.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button7.Location = new System.Drawing.Point(3, 180);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(160, 81);
-            this.button7.TabIndex = 1;
-            this.button7.Text = "시작프로그램에서 삭제";
-            this.button7.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
+            this.btnSPD.FlatAppearance.BorderSize = 0;
+            this.btnSPD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSPD.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnSPD.Image = ((System.Drawing.Image)(resources.GetObject("btnSPD.Image")));
+            this.btnSPD.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnSPD.Location = new System.Drawing.Point(3, 180);
+            this.btnSPD.Name = "btnSPD";
+            this.btnSPD.Size = new System.Drawing.Size(160, 81);
+            this.btnSPD.TabIndex = 1;
+            this.btnSPD.Text = "시작프로그램에서 삭제";
+            this.btnSPD.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnSPD.UseVisualStyleBackColor = true;
+            this.btnSPD.Click += new System.EventHandler(this.button7_Click);
             // 
-            // button6
+            // btnSPR
             // 
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button6.Image = ((System.Drawing.Image)(resources.GetObject("button6.Image")));
-            this.button6.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button6.Location = new System.Drawing.Point(3, 72);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(160, 81);
-            this.button6.TabIndex = 0;
-            this.button6.Text = "시작프로그램에 등록";
-            this.button6.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
-            // 
-            // bunifuElipse1
-            // 
+            this.btnSPR.FlatAppearance.BorderSize = 0;
+            this.btnSPR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSPR.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnSPR.Image = ((System.Drawing.Image)(resources.GetObject("btnSPR.Image")));
+            this.btnSPR.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnSPR.Location = new System.Drawing.Point(3, 72);
+            this.btnSPR.Name = "btnSPR";
+            this.btnSPR.Size = new System.Drawing.Size(160, 81);
+            this.btnSPR.TabIndex = 0;
+            this.btnSPR.Text = "시작프로그램에 등록";
+            this.btnSPR.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnSPR.UseVisualStyleBackColor = true;
+            this.btnSPR.Click += new System.EventHandler(this.button6_Click);
             // 
             // Form1
             // 
@@ -362,16 +359,16 @@
             this.ClientSize = new System.Drawing.Size(1053, 575);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.btnDel);
+            this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.lblProcNum);
             this.Controls.Add(this.listView1);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnRevise);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.tboxPeriod);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.btnSearch);
+            this.Controls.Add(this.tboxPath);
             this.Controls.Add(this.label1);
             this.ForeColor = System.Drawing.Color.AliceBlue;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -393,17 +390,17 @@
 
         #endregion
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox tboxPath;
+        private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox tboxPeriod;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnRevise;
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.Label lblProcNum;
         public System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button btnDel;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
@@ -414,10 +411,10 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btnSPD;
+        private System.Windows.Forms.Button btnSPR;
+        private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.Button btnOpen;
     }
 }
 
