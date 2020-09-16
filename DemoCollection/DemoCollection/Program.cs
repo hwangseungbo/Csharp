@@ -87,8 +87,8 @@ namespace DemoCollection
             //    Console.WriteLine("Q를 입력하셨군요...");
             //}
 
-            //데모컬렉션
-            //9/15 KML 시험
+            //Console.WriteLine($"!ture  -> {!true}");
+            //Console.WriteLine($"!false -> {!false}");
 
 
 
