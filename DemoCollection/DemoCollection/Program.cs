@@ -89,7 +89,25 @@ namespace DemoCollection
 
             //Console.WriteLine($"!ture  -> {!true}");
             //Console.WriteLine($"!false -> {!false}");
+            //var x = Convert.ToInt32("1010", 2);
+            //var y = Convert.ToInt32("0110", 2);
+            //var and = x & y;
+            //Console.WriteLine($"{and} : {Convert.ToString(and, 2)}");
+            //var or = x | y;
+            //Console.WriteLine($"{or} : {Convert.ToString(or, 2)}");
+            //var xor = x ^ y;
+            //Console.WriteLine($"{xor} : {Convert.ToString(xor, 2)}");
+            //var not = -x;
+            //Console.WriteLine($"{not} : {Convert.ToString(not, 2)}");
 
+            //int kor = 100;
+            //int eng = 90;
+            //int tot = 0;
+            //double avg = 0.0;
+            //tot = kor + eng;
+            //avg = tot / 2.0;
+            //Console.WriteLine("총점 : {0}", tot);
+            //Console.WriteLine("평균 : {0}", avg);
 
 
 
