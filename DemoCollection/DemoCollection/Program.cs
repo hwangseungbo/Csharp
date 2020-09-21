@@ -109,6 +109,11 @@ namespace DemoCollection
             //Console.WriteLine("총점 : {0}", tot);
             //Console.WriteLine("평균 : {0}", avg);
 
+            //int score = 60;
+            //if(score >= 60)
+            //{
+            //    Console.WriteLine("합격");
+            //}
 
 
         }
