@@ -115,6 +115,11 @@ namespace DemoCollection
             //    Console.WriteLine("합격");
             //}
 
+            //bool bln = false;
+            //if(!bln)
+            //{
+            //    Console.WriteLine("bln : false -> ! -> true");
+            //}
 
         }
     }
