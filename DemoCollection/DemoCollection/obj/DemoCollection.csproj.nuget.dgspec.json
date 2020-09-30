@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\SARADA\\source\\repos\\hwangseungbo\\CSharp\\DemoCollection\\DemoCollection\\DemoCollection.csproj": {}
+    "C:\\Users\\SARADA\\Source\\Repos\\hwangseungbo\\CSharp\\DemoCollection\\DemoCollection\\DemoCollection.csproj": {}
   },
   "projects": {
-    "C:\\Users\\SARADA\\source\\repos\\hwangseungbo\\CSharp\\DemoCollection\\DemoCollection\\DemoCollection.csproj": {
+    "C:\\Users\\SARADA\\Source\\Repos\\hwangseungbo\\CSharp\\DemoCollection\\DemoCollection\\DemoCollection.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\SARADA\\source\\repos\\hwangseungbo\\CSharp\\DemoCollection\\DemoCollection\\DemoCollection.csproj",
+        "projectUniqueName": "C:\\Users\\SARADA\\Source\\Repos\\hwangseungbo\\CSharp\\DemoCollection\\DemoCollection\\DemoCollection.csproj",
         "projectName": "DemoCollection",
-        "projectPath": "C:\\Users\\SARADA\\source\\repos\\hwangseungbo\\CSharp\\DemoCollection\\DemoCollection\\DemoCollection.csproj",
+        "projectPath": "C:\\Users\\SARADA\\Source\\Repos\\hwangseungbo\\CSharp\\DemoCollection\\DemoCollection\\DemoCollection.csproj",
         "packagesPath": "C:\\Users\\SARADA\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\SARADA\\source\\repos\\hwangseungbo\\CSharp\\DemoCollection\\DemoCollection\\obj\\",
+        "outputPath": "C:\\Users\\SARADA\\Source\\Repos\\hwangseungbo\\CSharp\\DemoCollection\\DemoCollection\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\SARADA\\AppData\\Roaming\\NuGet\\NuGet.Config",

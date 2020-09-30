@@ -176,6 +176,8 @@ namespace DemoCollection
             //    }
             //}
             //Console.WriteLine($"{grade}을 수상했습니다.");
+
+            //Console.WriteLine("");
         }
     }
 }
