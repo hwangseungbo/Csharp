@@ -177,10 +177,19 @@ namespace DemoCollection
             //}
             //Console.WriteLine($"{grade}을 수상했습니다.");
 
-            //Console.WriteLine("");
-            //Console.WriteLine("");
-            //Console.WriteLine("happy thanks giving day");
-            //Console.WriteLine("last day");
+            //Console.WriteLine("정수 입력 : _\b");
+            //int a = Convert.ToInt32(Console.ReadLine());
+
+            //if(a%2 != 0)
+            //{
+            //    Console.WriteLine("홀수");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("짝수");
+            //}
+
+
         }
     }
 }
