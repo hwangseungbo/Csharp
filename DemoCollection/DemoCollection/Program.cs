@@ -189,6 +189,16 @@ namespace DemoCollection
             //    Console.WriteLine("짝수");
             //}
 
+            //string data = "1234";
+            //int result;
+            //if (int.TryParse(data ,out result))
+            //{
+            //    Console.WriteLine("변환 가능 : {0}", result);
+            //}
+            //else
+            //{
+            //    Console.WriteLine("변환 불가");
+            //}
 
         }
     }
