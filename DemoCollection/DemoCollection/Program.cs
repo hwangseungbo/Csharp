@@ -212,7 +212,7 @@ namespace DemoCollection
             //}
 
             //Console.WriteLine("정수를 입력하세요");
-            //int answer = Convert.ToInt32(Console.ReadLine());
+            //int answer = Convert.ToInt32(Console.ReadLine());dd
             //switch (answer)
             //{
             //    case 1:
@@ -228,7 +228,32 @@ namespace DemoCollection
             //        Console.WriteLine("그냥 찍으셨군요.");
             //        break;
             //}
-           
+
+            //for ( ; ; )
+            //{
+            //    Console.WriteLine("무한 루프");
+            //}
+
+            //string str = "ABC123";
+            //foreach(char c in str)
+            //{
+            //    Console.Write($"{c}\t"); 
+            //}
+            //Console.WriteLine();
+
+            ////int[] intArray;
+            ////intArray = new int[3];
+            ////intArray[0] = 1;
+            ////intArray[1] = 2;
+            ////intArray[2] = 3;
+            //int[] intArray = new int[] { 1, 2, 3 };
+            //for (int i = 0; i < 3; i++)
+            //{
+            //    Console.WriteLine($"{i}번째 인덱스 : {intArray[i]}");
+            //}
+
+            //t[] intArray = { 0, 1, 2 };
+            
 
 
         }
