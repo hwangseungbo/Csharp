@@ -253,8 +253,14 @@ namespace DemoCollection
             //}
 
             //t[] intArray = { 0, 1, 2 };
-            
 
+            //int[] numbers = { 1, 1_000, 10_000, 1_000_000 };
+            //foreach (int number in numbers)
+            //{
+            //    Console.WriteLine(number);
+            //}
+
+            //Console.WriteLine("renew 10/12");
 
         }
     }
