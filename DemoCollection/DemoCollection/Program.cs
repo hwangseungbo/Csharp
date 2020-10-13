@@ -262,6 +262,14 @@ namespace DemoCollection
 
             //Console.WriteLine("renew 10/12");
 
+            //int result;
+            //int math;
+            //string score = "100";
+            //math = Int32.Parse(score);
+            //Console.WriteLine(math.ToString());
+
+
+
         }
     }
 }
