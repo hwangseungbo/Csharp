@@ -268,7 +268,7 @@ namespace DemoCollection
             //math = Int32.Parse(score);
             //Console.WriteLine(math.ToString());
 
-
+            //Console.WriteLine("renew 10/14");
 
         }
     }
