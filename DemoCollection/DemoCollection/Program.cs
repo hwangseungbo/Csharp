@@ -270,6 +270,7 @@ namespace DemoCollection
 
             //Console.WriteLine("renew 10/14");
             //Console.WriteLine("출장");
+            //Console.WriteLine("출장");
         }
     }
 }
