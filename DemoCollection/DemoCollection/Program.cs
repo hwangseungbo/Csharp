@@ -272,6 +272,7 @@ namespace DemoCollection
             //Console.WriteLine("출장");
             //Console.WriteLine("출장");
             //Console.WriteLine("출장");
+            //Console.WriteLine("10/20");
         }
     }
 }
