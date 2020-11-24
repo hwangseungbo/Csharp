@@ -329,7 +329,7 @@ namespace DemoCollection
             //int total = students[0] + students[1] + students[2];
             //Console.WriteLine($"총점 : {total}");
 
-
+            //Console.WriteLine("11/25");
 
 
         }
