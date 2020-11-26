@@ -330,6 +330,10 @@ namespace DemoCollection
             //Console.WriteLine($"총점 : {total}");
 
             //Console.WriteLine("11/25");
+            //Console.WriteLine("11/26");
+
+
+
 
 
         }
