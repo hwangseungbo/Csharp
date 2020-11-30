@@ -344,7 +344,7 @@ namespace DemoCollection
             //int total = students[0] + students[1] + students[2];
             //Console.WriteLine($"총점 : {total:00.00}");
 
-
+            //Console.WriteLine("12/1");
 
 
 
