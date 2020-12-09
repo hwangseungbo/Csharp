@@ -353,6 +353,47 @@ namespace DemoCollection
             //Console.WriteLine("12/7");
             //Console.WriteLine("12/8");
 
+            //int[,] intArray;
+            //intArray = new int[2, 3];
+
+            //intArray[0, 0] = 1;
+            //intArray[0, 1] = 2;
+            //intArray[0, 2] = 3;
+            //intArray[1, 0] = 4;
+            //intArray[1, 1] = 5;
+            //intArray[1, 2] = 6;
+
+            //for(int i = 0; i < 2; i++)
+            //{
+            //    for(int j = 0; j < 3; j++)
+            //    {
+            //        Console.Write($"{intArray[i, j]}_");
+            //    }
+            //    Console.WriteLine("\n");
+            //}
+
+            //int[,,] arr = new int[2, 2, 2]
+            //    { {{1,2,},{3,4}}, {{5,6},{7,8}} };
+
+            //Console.WriteLine("차수 출력 : {0}", arr.Rank);
+            //Console.WriteLine("길이 출력 : {0}", arr.Length);
+
+            //for (int i = 0; i < arr.GetLength(0); i++)  // 층
+            //{
+            //    for(int j=0; j < arr.GetLength(1); j++) // 행
+            //    {
+            //        for(int k=0; k < arr.GetLength(2); k++)
+            //        {
+            //            Console.Write("{0}\t", arr[i, j, k]);
+            //        }
+            //        Console.WriteLine();
+            //    }
+            //    Console.WriteLine();
+            //}
+
+
+
+
         }
     }
 }
