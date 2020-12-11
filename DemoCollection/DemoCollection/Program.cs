@@ -393,9 +393,48 @@ namespace DemoCollection
 
             //Console.WriteLine("12/10");
 
-            
+            //Show();
 
+            //Hi(); Hi(); Hi();
 
+            //ShowMessage("매개변수");
+            //ShowMessage("Parameter");
+
+            //int a = 3;
+            //int b = 5;
+            //int c = AddNumbers(3, 5);
+            //Console.WriteLine($"{a} + {b} = {c}");
+
+            //Console.WriteLine("12/11);
         }
+
+        //함수들 쓰는 공
+
+        //static void Show()
+        //{
+        //    Console.WriteLine("Hello World");
+        //}
+        //static void Hi()
+        //{
+        //    Console.WriteLine("안녕하세요");
+        //}
+        //static void ShowMessage(string message)
+        //{
+        //    Console.WriteLine(message);
+        //}
+        
+        ///// <summary>
+        ///// 두 수를 더하여 그 결괏값을 반환시켜 주는 함수
+        ///// </summary>
+        ///// <param name="a">첫 번째 매개변수</param>
+        ///// <param name="b">두 번째 매개변수</param>
+        ///// <returns>a + b 결과</returns>
+        //static int AddNumbers(int a, int b)
+        //{
+        //    return a + b;
+        //}
+
+
+
     }
 }
