@@ -406,6 +406,11 @@ namespace DemoCollection
             //Console.WriteLine($"{a} + {b} = {c}");
 
             //Console.WriteLine("12/11);
+            //Console.WriteLine("12/12);
+
+
+
+
         }
 
         //함수들 쓰는 공
@@ -422,7 +427,7 @@ namespace DemoCollection
         //{
         //    Console.WriteLine(message);
         //}
-        
+
         ///// <summary>
         ///// 두 수를 더하여 그 결괏값을 반환시켜 주는 함수
         ///// </summary>
