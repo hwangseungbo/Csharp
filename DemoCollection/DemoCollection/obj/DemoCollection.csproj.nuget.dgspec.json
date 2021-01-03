@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\SARADA\\Source\\Repos\\hwangseungbo\\CSharp\\DemoCollection\\DemoCollection\\DemoCollection.csproj": {}
+    "C:\\Users\\H\\Source\\Repos\\hwangseungbo\\CSharp\\DemoCollection\\DemoCollection\\DemoCollection.csproj": {}
   },
   "projects": {
-    "C:\\Users\\SARADA\\Source\\Repos\\hwangseungbo\\CSharp\\DemoCollection\\DemoCollection\\DemoCollection.csproj": {
+    "C:\\Users\\H\\Source\\Repos\\hwangseungbo\\CSharp\\DemoCollection\\DemoCollection\\DemoCollection.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\SARADA\\Source\\Repos\\hwangseungbo\\CSharp\\DemoCollection\\DemoCollection\\DemoCollection.csproj",
+        "projectUniqueName": "C:\\Users\\H\\Source\\Repos\\hwangseungbo\\CSharp\\DemoCollection\\DemoCollection\\DemoCollection.csproj",
         "projectName": "DemoCollection",
-        "projectPath": "C:\\Users\\SARADA\\Source\\Repos\\hwangseungbo\\CSharp\\DemoCollection\\DemoCollection\\DemoCollection.csproj",
-        "packagesPath": "C:\\Users\\SARADA\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\SARADA\\Source\\Repos\\hwangseungbo\\CSharp\\DemoCollection\\DemoCollection\\obj\\",
+        "projectPath": "C:\\Users\\H\\Source\\Repos\\hwangseungbo\\CSharp\\DemoCollection\\DemoCollection\\DemoCollection.csproj",
+        "packagesPath": "C:\\Users\\H\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\H\\Source\\Repos\\hwangseungbo\\CSharp\\DemoCollection\\DemoCollection\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\SARADA\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\H\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -26,7 +26,6 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
-            "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
           }
         },
@@ -38,7 +37,6 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "targetAlias": "netcoreapp3.1",
           "imports": [
             "net461",
             "net462",
@@ -54,7 +52,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
         }
       }
     }
