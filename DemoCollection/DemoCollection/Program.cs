@@ -434,6 +434,8 @@ namespace DemoCollection
             //Console.WriteLine("1/6);
             //Console.WriteLine("1/7);
             //Console.WriteLine("1/8);
+            //Console.WriteLine("1/9);
+            //Console.WriteLine("1/10);
 
 
 
