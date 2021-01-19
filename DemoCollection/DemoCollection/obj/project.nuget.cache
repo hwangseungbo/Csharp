@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "MVzifqUV4RrAwXi2tmdjYyKiNHc0j/AVK5ON8no5iqhAV5GmIB7Hr6PWtj+I1/qzCv2iucmjco3Kaj5vFjEkqQ==",
+  "dgSpecHash": "kybJ07r7vfWncem1isiveGqleDLJuWs/gB+c5ky67rUWIGIgTl5j4fK1hUvA7Y83MGplSJy0E4J7vCWl6tQ6Eg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\H\\Source\\Repos\\hwangseungbo\\CSharp\\DemoCollection\\DemoCollection\\DemoCollection.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\SARADA\\Source\\Repos\\hwangseungbo\\CSharp\\DemoCollection\\DemoCollection\\DemoCollection.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\SARADA\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.11\\microsoft.netcore.app.host.win-x64.3.1.11.nupkg.sha512"
+  ],
   "logs": []
 }
