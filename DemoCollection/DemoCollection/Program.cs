@@ -459,8 +459,15 @@ namespace DemoCollection
             //Console.WriteLine("1/31);
             //Console.WriteLine("2/1");
             //Console.WriteLine("2/2");
-
-
+            //foreach (string arg in args)
+            //{
+            //    Console.WriteLine(arg);
+            //}
+            //for (int i = 0; i < args.Length; i++)
+            //{
+            //    Console.WriteLine(args[i]+args.Length);
+            //}
+            //Console.WriteLine("2/3");
 
         }
 
