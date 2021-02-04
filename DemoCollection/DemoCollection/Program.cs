@@ -1,8 +1,12 @@
 ﻿using System;
 using System.Dynamic;
 using System.Reflection.Metadata.Ecma335;
-using System.Runtime.InteropServices;
 using System.Security.Cryptography.X509Certificates;
+using System.Runtime.InteropServices;
+// 시스템 날짜/시간 변경하기
+// SetLocalTime은 UTC+0(시)을,
+
+// SetSystemTime은 UTC+9(시)(표준시간대가 "서울"로 설정된 경우)을 설정한다.
 
 namespace DemoCollection
 {
@@ -468,6 +472,7 @@ namespace DemoCollection
             //    Console.WriteLine(args[i]+args.Length);
             //}
             //Console.WriteLine("2/3");
+            //Console.WriteLine("2/4");
 
         }
 
