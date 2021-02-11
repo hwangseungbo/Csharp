@@ -12,6 +12,8 @@ namespace DemoCollection
         static void Main(string[] args)
         {
             Console.WriteLine("2/10");
+            Console.WriteLine("2/11");
+
         }
     }
 }
